@@ -13,14 +13,14 @@ const Banner = () => {
       <Swiper
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper h-96 rounded-lg "
+        className="mySwiper h-56 md:h-96 rounded-lg "
       >
         <SwiperSlide>
           <div className=" flex flex-col justify-center items-center h-full bg-gradient-to-r from-purple-900 to-gray-500">
-            <h1 className="text-3xl text-white font-bold underline mb-6">
+            <h1 className="text-xl md:text-2xl lg:text-3xl text-white font-bold underline mb-2 md:mb-6">
               Why Should Learn a Foreign Language?
             </h1>
-            <ul className="text-white font-bold text-xl text-center">
+            <ul className="text-white font-bold md:text-xl text-center">
               <li>Enhance career opportunities and global connections.</li>
               <li>Improve cognitive skills and cultural understanding.</li>
               <li>Travel confidently and explore new worlds.</li>
@@ -29,7 +29,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className=" flex flex-col justify-center items-center h-full bg-gradient-to-r from-cyan-900 to-blue-900">
-            <h1 className="text-3xl text-white font-bold underline mb-6 ">
+            <h1 className="text-xl md:text-2xl lg:text-3xl text-white font-bold underline mb-2 md:mb-6 ">
               Why Should You Choose Us?
             </h1>
             <ul className="text-white font-bold text-center text-xl">
@@ -43,7 +43,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className=" flex flex-col justify-center items-center h-full bg-gradient-to-r from-violet-500 to-fuchsia-500">
-            <h1 className="text-3xl text-white font-bold underline mb-6">
+            <h1 className="text-xl md:text-2xl lg:text-3xl text-white font-bold underline mb-2 md:mb-6">
               Why We Are Better Than Others?
             </h1>
             <ul className="text-white font-bold text-center text-xl">
