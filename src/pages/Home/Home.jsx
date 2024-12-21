@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import LanguageCategory from "./LanguageCategory";
 import Stats from "./Stats";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <Stats></Stats>
+      <LanguageCategory></LanguageCategory>
     </div>
   );
 };
