@@ -7,7 +7,7 @@ import AuthProvider from "./providers/AuthProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <section className="max-w-[1440px] mx-auto">
+    <section className="max-w-7xl mx-auto ">
       <AuthProvider>
         <RouterProvider router={router}></RouterProvider>
       </AuthProvider>
