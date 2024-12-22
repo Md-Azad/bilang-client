@@ -1,8 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import logoImg from "../assets/logo.webp";
 import { MdOutlineNightlight, MdOutlineNightlightRound } from "react-icons/md";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
+  const { user, logOut } = useAuth();
+
   const navLinks = (
     <>
       {" "}
@@ -14,6 +17,15 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -55,9 +67,15 @@ const Navbar = () => {
         <MdOutlineNightlightRound className="text-3xl -rotate-45" />
         <MdOutlineNightlight className="text-3xl -rotate-45" />
 
-        <Link to="/login" className="btn btn-success text-white">
-          Login
-        </Link>
+        {user?.email ? (
+          <button onClick={handleLogout} className="btn btn-success text-white">
+            Logout
+          </button>
+        ) : (
+          <Link to="/login" className="btn btn-success text-white">
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

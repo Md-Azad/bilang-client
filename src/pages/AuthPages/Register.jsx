@@ -1,9 +1,10 @@
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const Register = () => {
+  const navigate = useLocation();
   const { createUser } = useAuth();
   const handleRegister = (e) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         if (user) {
+          navigate("/");
           Swal.fire({
             position: "top-end",
             icon: "success",
