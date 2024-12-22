@@ -1,10 +1,10 @@
 import { FaGoogle } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const navigate = useLocation();
+  const navigate = useNavigate();
   const { createUser } = useAuth();
   const handleRegister = (e) => {
     e.preventDefault();

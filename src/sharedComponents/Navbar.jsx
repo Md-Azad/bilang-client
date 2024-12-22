@@ -68,9 +68,15 @@ const Navbar = () => {
         <MdOutlineNightlight className="text-3xl -rotate-45" />
 
         {user?.email ? (
-          <button onClick={handleLogout} className="btn btn-success text-white">
-            Logout
-          </button>
+          <div>
+            {/* {user?.photoURL ? "A" : "N/A"} */}
+            <button
+              onClick={handleLogout}
+              className="btn btn-success text-white"
+            >
+              Logout
+            </button>
+          </div>
         ) : (
           <Link to="/login" className="btn btn-success text-white">
             Login

@@ -2,14 +2,29 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { logIn } = useAuth();
+  const navigate = useNavigate();
 
   const handlelogIn = (e) => {
     e.preventDefault();
-    console.log("login clicking");
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    logIn(email, password)
+      .then((result) => {
+        if (result.user) {
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
   return (
     <div className="flex flex-col  items-center min-h-screen mt-8 bg-base-300">
