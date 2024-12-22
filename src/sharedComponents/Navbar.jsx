@@ -2,10 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 import logoImg from "../assets/logo.webp";
 import { MdOutlineNightlight, MdOutlineNightlightRound } from "react-icons/md";
 import useAuth from "../hooks/useAuth";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-
+  console.log(user);
   const navLinks = (
     <>
       {" "}
@@ -27,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 m-6">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -68,8 +69,16 @@ const Navbar = () => {
         <MdOutlineNightlight className="text-3xl -rotate-45" />
 
         {user?.email ? (
-          <div>
-            {/* {user?.photoURL ? "A" : "N/A"} */}
+          <div className="flex gap-2 items-center">
+            <Tooltip id="my-tooltip" data-tooltip-place="left" />
+            <img
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={user?.displayName}
+              src={user?.photoURL ? user?.photoURL : "N/A"}
+              className="w-10 h-10 rounded-full"
+              alt=""
+            />
+
             <button
               onClick={handleLogout}
               className="btn btn-success text-white"

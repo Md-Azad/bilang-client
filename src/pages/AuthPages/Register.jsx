@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
   const navigate = useNavigate();
-  const { createUser } = useAuth();
+  const { createUser, updateUser } = useAuth();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -26,6 +26,18 @@ const Register = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          updateUser({
+            displayName: name,
+            photoURL: photo,
+          })
+            .then(() => {})
+            .catch((err) => {
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: err.message,
+              });
+            });
         }
       })
       .catch((err) => {
