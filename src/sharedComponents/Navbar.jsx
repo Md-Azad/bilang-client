@@ -16,6 +16,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/add-tutorials">Add Tutorials</NavLink>
       </li>
+      <li>
+        <NavLink to="/find-tutors">Find Tutors</NavLink>
+      </li>
     </>
   );
 
