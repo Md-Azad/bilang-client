@@ -3,6 +3,7 @@ import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home/Home";
 import Login from "../pages/AuthPages/Login";
 import Register from "../pages/AuthPages/Register";
+import AddTutorials from "../pages/AuthPages/AddTutorials/AddTutorials";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -11,6 +12,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/add-tutorials",
+        element: <AddTutorials></AddTutorials>,
       },
       {
         path: "/login",

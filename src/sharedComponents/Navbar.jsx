@@ -6,7 +6,7 @@ import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  console.log(user);
+
   const navLinks = (
     <>
       {" "}
@@ -14,7 +14,7 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/">Add Tutorials</NavLink>
+        <NavLink to="/add-tutorials">Add Tutorials</NavLink>
       </li>
     </>
   );
@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 m-6">
+    <div className="navbar bg-base-100 my-6">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
