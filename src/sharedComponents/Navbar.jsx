@@ -6,6 +6,7 @@ import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  console.log(user);
 
   const navLinks = (
     <>

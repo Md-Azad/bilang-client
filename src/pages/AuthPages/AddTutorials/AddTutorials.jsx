@@ -2,8 +2,10 @@ import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 
 const AddTutorials = () => {
+  const { user } = useAuth();
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -68,7 +70,8 @@ const AddTutorials = () => {
             <input
               name="name"
               type="text"
-              placeholder="Type here"
+              defaultValue={user?.displayName}
+              readOnly
               className="input input-bordered w-full max-w-xs"
             />
           </label>
@@ -79,7 +82,8 @@ const AddTutorials = () => {
             <input
               name="email"
               type="text"
-              placeholder="Type here"
+              defaultValue={user?.email}
+              readOnly
               className="input input-bordered w-full max-w-xs"
             />
           </label>
