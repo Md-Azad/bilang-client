@@ -6,6 +6,7 @@ import Register from "../pages/AuthPages/Register";
 import AddTutorials from "../pages/AuthPages/AddTutorials/AddTutorials";
 import FindTutors from "../pages/FindTutors/FindTutors";
 import Private from "./Private";
+import TutorDetails from "../pages/TutorDetails/TutorDetails";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/find-tutors",
         element: <FindTutors></FindTutors>,
+      },
+      {
+        path: "/tutor/:id",
+        element: <TutorDetails></TutorDetails>,
       },
       {
         path: "/login",

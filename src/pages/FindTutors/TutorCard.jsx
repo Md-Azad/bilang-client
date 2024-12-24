@@ -1,6 +1,7 @@
 import { MdCastForEducation } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { TbLanguage } from "react-icons/tb";
+import { Link } from "react-router-dom";
 const TutorCard = ({ tutor }) => {
   return (
     <div className="border-4 border-red-800 p-4">
@@ -38,9 +39,11 @@ const TutorCard = ({ tutor }) => {
         <div className="w-1/3 "></div>
         <div className="flex justify-between items-center">
           <h1 className=" font-bold">Description: {tutor?.description}</h1>
-          <button className="btn bg-pink-500 border-2 border-black">
-            Details
-          </button>
+          <Link to={`/tutor/${tutor?._id}`}>
+            <button className="btn bg-pink-500 border-2 border-black">
+              Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
