@@ -14,7 +14,7 @@ const FindTutors = () => {
         console.log(err.message);
       });
   }, []);
-  console.log(tutors);
+
   return (
     <div>
       <h1 className="text-3xl text-center">Find Your Tutor Here.</h1>

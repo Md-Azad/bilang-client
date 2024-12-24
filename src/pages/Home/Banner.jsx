@@ -6,8 +6,11 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper/modules";
+import useAuth from "../../hooks/useAuth";
 
 const Banner = () => {
+  const { user } = useAuth();
+  console.log(user);
   return (
     <>
       <Swiper
