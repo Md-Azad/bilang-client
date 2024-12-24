@@ -1,14 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+// import useAuth from "../../hooks/useAuth";
 
 const TutorDetails = () => {
   const param = useParams();
   const id = param.id;
-  const { user } = useAuth();
+  //   const { user } = useAuth();
 
   const [details, setDetails] = useState([]);
+  const { user } = useAuth();
 
   useEffect(() => {
     axios
@@ -20,10 +22,31 @@ const TutorDetails = () => {
         console.log(err.message);
       });
   }, [id]);
+  const handleAddBooking = () => {
+    axios
+      .post("http://localhost:3000/booking", {
+        jobId: details._id,
+        email: user?.email,
+        name: details.name,
+        image: details.image,
+        language: details.language,
+        price: details.price,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   return (
-    <div className="card lg:card-side bg-gray-100 shadow-xl pl-4">
-      <figure>
-        <img className="rounded-lg" src={details?.image} alt="Album" />
+    <div className="card lg:card-side bg-gray-100 shadow-xl pl-4 h-72">
+      <figure className="w-1/2 h-10/12 m-2 rounded-lg">
+        <img
+          className=" w-full h-full rounded-lg object-cover"
+          src={details?.image}
+          alt="Album"
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{details?.name}</h2>
@@ -33,7 +56,9 @@ const TutorDetails = () => {
         <p>Review: {details?.review}</p>
 
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Book this tutor</button>
+          <button onClick={handleAddBooking} className="btn btn-primary">
+            Book this tutor
+          </button>
         </div>
       </div>
     </div>

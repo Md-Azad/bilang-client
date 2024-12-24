@@ -30,7 +30,9 @@ const Register = () => {
             displayName: name,
             photoURL: photo,
           })
-            .then(() => {})
+            .then((result) => {
+              console.log(result);
+            })
             .catch((err) => {
               Swal.fire({
                 icon: "error",

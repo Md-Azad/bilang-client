@@ -6,7 +6,7 @@ const FindTutors = () => {
   const [tutors, setTutors] = useState([]);
   useState(() => {
     axios
-      .get("http://localhost:3000/add-tutorials")
+      .get("http://localhost:3000/all-tutorials")
       .then((response) => {
         setTutors(response.data);
       })

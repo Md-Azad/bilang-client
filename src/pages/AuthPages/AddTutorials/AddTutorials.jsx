@@ -12,9 +12,11 @@ const AddTutorials = () => {
     const name = form.name.value;
     const email = form.email.value;
     const image = form.image.value;
-    const language = form.language.value;
+
     const price = form.price.value;
     const description = form.description.value;
+    const selectElement = form.elements.selectName;
+    const language = selectElement.options[selectElement.selectedIndex].text;
 
     axios
       .post("http://localhost:3000/add-tutorials", {
@@ -24,6 +26,8 @@ const AddTutorials = () => {
         language,
         price,
         review: 0,
+        active_student: 0,
+        total_lession: 0,
         description,
       })
       .then((response) => {
@@ -43,7 +47,7 @@ const AddTutorials = () => {
           icon: "error",
           title: "Oops...",
           text: "Something went wrong!",
-          text: err.message,
+          text: err.response.data.error,
         });
       });
   };
@@ -98,16 +102,22 @@ const AddTutorials = () => {
               className="input input-bordered w-full max-w-xs"
             />
           </label>
-          <label className="form-control w-full max-w-xs">
+          <label className="form-control w-full max-w-xs ">
             <div className="label">
               <span className="label-text">Language</span>
             </div>
-            <input
-              name="language"
-              type="text"
-              placeholder="Type here"
-              className="input input-bordered w-full max-w-xs"
-            />
+            <select name="selectName">
+              <option value="0">Choose Language</option>
+              <option value="1">English</option>
+              <option value="2">German</option>
+              <option value="3">Arabic</option>
+              <option value="4">Spanish</option>
+              <option value="5">Italian</option>
+              <option value="6">Japanese</option>
+              <option value="7">French</option>
+              <option value="8">Chinese</option>
+              <option value="9">Protuguese</option>
+            </select>
           </label>
           <label className="form-control w-full max-w-xs">
             <div className="label">

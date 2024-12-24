@@ -19,6 +19,12 @@ const Navbar = () => {
       <li>
         <NavLink to="/find-tutors">Find Tutors</NavLink>
       </li>
+      <li>
+        <NavLink to="/my-tutorials">My Tutorials</NavLink>
+      </li>
+      <li>
+        <NavLink to="/my-booked-tutorials">My Booked Tutorials</NavLink>
+      </li>
     </>
   );
 
