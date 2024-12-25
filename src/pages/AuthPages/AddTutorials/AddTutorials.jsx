@@ -116,7 +116,7 @@ const AddTutorials = () => {
               <option value="6">Japanese</option>
               <option value="7">French</option>
               <option value="8">Chinese</option>
-              <option value="9">Protuguese</option>
+              <option value="9">Portuguese</option>
             </select>
           </label>
           <label className="form-control w-full max-w-xs">

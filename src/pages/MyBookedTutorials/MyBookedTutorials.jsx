@@ -19,12 +19,21 @@ const MyBookedTutorials = () => {
 
   return (
     <div>
-      <h1 className="text-2xl md:text-3xl">your booking data is here.</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {bookings.map((booking) => (
-          <BookingCard key={booking._id} booking={booking}></BookingCard>
-        ))}
-      </div>
+      <h1 className="text-2xl md:text-3xl text-center font-bold text-green-500">
+        Your booking data is here.
+      </h1>
+      {bookings.length ? (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {bookings.map((booking) => (
+            <BookingCard key={booking._id} booking={booking}></BookingCard>
+          ))}
+        </div>
+      ) : (
+        <h1 className="flex justify-center items-center mt-20 text-2xl text-red-900 font-bold">
+          {" "}
+          You have no booked tutorial yet.
+        </h1>
+      )}
     </div>
   );
 };

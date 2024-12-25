@@ -42,7 +42,7 @@ const MyTutorials = () => {
               <th></th>
               <th>Language</th>
               <th>Price</th>
-              <th>Trainer Name</th>
+              <th>Review</th>
               <th className="text-center">Action</th>
             </tr>
           </thead>
@@ -52,7 +52,7 @@ const MyTutorials = () => {
                 <th>{index + 1}</th>
                 <td>{tutorial.language}</td>
                 <td>${tutorial.price} per session</td>
-                <td>{tutorial.name}</td>
+                <td>{tutorial.review}</td>
                 <td className=" text-center">
                   <Link to={`/update/${tutorial._id}`}>
                     <button className="btn btn-info text-white mr-8">
