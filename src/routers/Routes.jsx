@@ -10,6 +10,7 @@ import TutorDetails from "../pages/TutorDetails/TutorDetails";
 import MyTutorials from "../pages/MyTutorials/MyTutorials";
 import MyBookedTutorials from "../pages/MyBookedTutorials/MyBookedTutorials";
 import UpdateTutorial from "../pages/MyBookedTutorials/UpdateTutorial";
+import Category from "../pages/Category/Category";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
             <UpdateTutorial></UpdateTutorial>
           </Private>
         ),
+      },
+      {
+        path: "/category/:category",
+        element: <Category></Category>,
       },
       {
         path: "/login",
