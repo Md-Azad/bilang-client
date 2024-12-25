@@ -9,6 +9,7 @@ import Private from "./Private";
 import TutorDetails from "../pages/TutorDetails/TutorDetails";
 import MyTutorials from "../pages/MyTutorials/MyTutorials";
 import MyBookedTutorials from "../pages/MyBookedTutorials/MyBookedTutorials";
+import UpdateTutorial from "../pages/MyBookedTutorials/UpdateTutorial";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -52,6 +53,14 @@ export const router = createBrowserRouter([
           <Private>
             {" "}
             <MyBookedTutorials></MyBookedTutorials>{" "}
+          </Private>
+        ),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <Private>
+            <UpdateTutorial></UpdateTutorial>
           </Private>
         ),
       },

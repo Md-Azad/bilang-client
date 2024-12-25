@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const MyTutorials = () => {
   const { user } = useAuth();
@@ -30,9 +31,6 @@ const MyTutorials = () => {
       });
   };
 
-  const handleUpdateTutorial = (id) => {
-    console.log("updateing", id);
-  };
   return (
     <div>
       <h1>My tutorials here. {myTutorials.length}</h1>
@@ -56,9 +54,11 @@ const MyTutorials = () => {
                 <td>${tutorial.price} per session</td>
                 <td>{tutorial.name}</td>
                 <td className=" text-center">
-                  <button className="btn btn-info text-white mr-8">
-                    Update
-                  </button>
+                  <Link to={`/update/${tutorial._id}`}>
+                    <button className="btn btn-info text-white mr-8">
+                      Update
+                    </button>
+                  </Link>
                   <button
                     onClick={() => handleTutorialDelete(tutorial._id)}
                     className="btn bg-red-700 text-white"
