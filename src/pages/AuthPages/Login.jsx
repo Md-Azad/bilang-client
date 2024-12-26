@@ -4,6 +4,7 @@ import { FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import axios from "axios";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -30,6 +31,15 @@ const Login = () => {
 
     logIn(email, password)
       .then((result) => {
+        // const user = { email: result?.user?.email };
+        // axios
+        //   .post("http://localhost:3000/jwt", user, { withCredentials: true })
+        //   .then((res) => {
+        //     console.log("cookie", res.data);
+        //   })
+        //   .catch((err) => {
+        //     console.log(err.message);
+        //   });
         if (result.user) {
           navigate("/");
         }

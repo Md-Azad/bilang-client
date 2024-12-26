@@ -9,7 +9,9 @@ const MyTutorials = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/my-tutorials?email=${user?.email}`)
+      .get(`http://localhost:3000/my-tutorials?email=${user?.email}`, {
+        withCredentials: true,
+      })
       .then((response) => {
         setMyTutorials(response.data);
       });
