@@ -9,7 +9,7 @@ const FindTutors = () => {
 
   useState(() => {
     axios
-      .get("http://localhost:3000/all-tutorials")
+      .get("http://localhost:3000/all-tutorials", { withCredentials: true })
       .then((response) => {
         setTutors(response.data);
       })

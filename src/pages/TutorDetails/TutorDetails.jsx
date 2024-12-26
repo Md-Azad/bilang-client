@@ -14,7 +14,7 @@ const TutorDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/tutor/${id}`)
+      .get(`http://localhost:3000/tutor/${id}`, { withCredentials: true })
       .then((response) => {
         setDetails(response.data);
       })

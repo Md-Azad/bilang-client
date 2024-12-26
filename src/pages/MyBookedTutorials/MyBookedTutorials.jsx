@@ -5,10 +5,13 @@ import BookingCard from "./BookingCard";
 
 const MyBookedTutorials = () => {
   const { user } = useAuth();
+
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/booking/${user.email}`)
+      .get(`http://localhost:3000/booking/${user.email}`, {
+        withCredentials: true,
+      })
       .then((res) => {
         setBookings(res.data);
       })

@@ -57,14 +57,22 @@ const AuthProvider = ({ children }) => {
         const user = { email: currentUser.email };
         axios
           .post(`http://localhost:3000/jwt`, user, { withCredentials: true })
-          .then((res) => {
-            console.log(res.data);
+          .then(() => {
+            setLoading(false);
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+      } else {
+        axios
+          .post("http://localhost:3000/logout", {}, { withCredentials: true })
+          .then(() => {
+            setLoading(false);
           })
           .catch((err) => {
             console.log(err.message);
           });
       }
-      setLoading(false);
     });
     return () => {
       unSubcribe();

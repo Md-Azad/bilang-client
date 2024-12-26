@@ -31,15 +31,6 @@ const Login = () => {
 
     logIn(email, password)
       .then((result) => {
-        // const user = { email: result?.user?.email };
-        // axios
-        //   .post("http://localhost:3000/jwt", user, { withCredentials: true })
-        //   .then((res) => {
-        //     console.log("cookie", res.data);
-        //   })
-        //   .catch((err) => {
-        //     console.log(err.message);
-        //   });
         if (result.user) {
           navigate("/");
         }
