@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const BookingCard = ({ booking }) => {
   const handleReview = (id) => {
     axios
-      .patch("http://localhost:3000/add-tutorials", {
+      .patch("https://bilang-server.vercel.app/add-tutorials", {
         jobId: id,
       })
       .then((res) => {

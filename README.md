@@ -1,8 +1,30 @@
-# React + Vite
+## Project Name: BiLang
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### backend github link: https://github.com/programming-hero-web-course2/b10a11-server-side-Md-Azad
 
-Currently, two official plugins are available:
+### Live link: https://bilang-57fe9.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 5 Features of this web site:-
+
+    1. Registration with email and password and google account.
+    2. Add Tutorials.
+    3. Update Tutorial.
+    4. View details page of a single Tutor.
+    5. Delete Tutorial.
+    6.Search by Language name.
+    7.Booking sesstion.
+
+### npm packages are used in this app.
+
+    1.axios
+    2.firebase,
+    3.localforage
+    4.match-sorter
+    5.react-dom
+    6.react-helmet-async
+    7.react-icons
+    8.react-router-dom
+    9.react-tooltip
+    10.sort-by
+    11.sweetalert2
+    12.swiper
