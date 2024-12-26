@@ -164,7 +164,7 @@ const UpdateTutorial = () => {
           <input
             className="btn bg-[#D2B48C] text-black text-2xl col-span-2 w-[96%] mt-4"
             type="submit"
-            value="Submit"
+            value="Update"
           />
         </form>
       </div>
