@@ -1,7 +1,13 @@
 import { IoIosStar } from "react-icons/io";
+import useAuth from "../../hooks/useAuth";
 const Stats = () => {
+  const { mode } = useAuth();
   return (
-    <div className="stats stats-vertical lg:stats-horizontal shadow w-full my-4 shadow-black">
+    <div
+      className={`stats stats-vertical lg:stats-horizontal shadow w-full my-4 shadow-black ${
+        mode ? "bg-gray-200" : ""
+      } `}
+    >
       <div className="stat">
         <div className="stat-value">32,000+</div>
         <div className="stat-desc">Experience tutors</div>

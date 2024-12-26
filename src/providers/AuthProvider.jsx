@@ -14,6 +14,7 @@ import axios from "axios";
 
 const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
+  const [mode, setMode] = useState(false);
   const [user, setUser] = useState([]);
   const provider = new GoogleAuthProvider();
 
@@ -47,6 +48,8 @@ const AuthProvider = ({ children }) => {
     updateUser,
     logOut,
     googleLogin,
+    mode,
+    setMode,
   };
 
   useEffect(() => {

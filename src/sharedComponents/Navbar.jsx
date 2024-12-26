@@ -5,7 +5,7 @@ import useAuth from "../hooks/useAuth";
 import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
-  const { user, logOut } = useAuth();
+  const { user, logOut, mode, setMode } = useAuth();
 
   const navLinks = (
     <>
@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 my-6">
+    <div className={`navbar ${mode ? "bg-gray-400" : "bg-base-100"} my-6 `}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -74,8 +74,13 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 gap-2">{navLinks}</ul>
       </div>
       <div className="navbar-end gap-4">
-        <MdOutlineNightlightRound className="text-3xl -rotate-45" />
-        <MdOutlineNightlight className="text-3xl -rotate-45" />
+        <button onClick={() => setMode((pre) => !pre)}>
+          {mode ? (
+            <MdOutlineNightlight className="text-3xl -rotate-45" />
+          ) : (
+            <MdOutlineNightlightRound className="text-3xl -rotate-45" />
+          )}
+        </button>
 
         {user?.email ? (
           <div className="flex gap-2 items-center">
