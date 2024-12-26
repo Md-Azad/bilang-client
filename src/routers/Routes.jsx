@@ -11,10 +11,12 @@ import MyTutorials from "../pages/MyTutorials/MyTutorials";
 import MyBookedTutorials from "../pages/MyBookedTutorials/MyBookedTutorials";
 import UpdateTutorial from "../pages/MyBookedTutorials/UpdateTutorial";
 import Category from "../pages/Category/Category";
+import Error from "../sharedComponents/Error";
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout></RootLayout>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
