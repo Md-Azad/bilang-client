@@ -5,7 +5,19 @@ import Swal from "sweetalert2";
 
 const Register = () => {
   const navigate = useNavigate();
-  const { createUser, updateUser } = useAuth();
+  const { createUser, updateUser, googleLogin } = useAuth();
+
+  const handleGoogleRegister = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -56,7 +68,7 @@ const Register = () => {
         <h1 className="text-5xl font-bold italic">Register now!</h1>
         <p>With</p>
         <button
-          //   onClick={handleGoogleRegister}
+          onClick={handleGoogleRegister}
           className="flex items-center justify-center btn bg-pink-600 text-white"
         >
           <FaGoogle className="text-white text-xl" />

@@ -7,8 +7,20 @@ import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { logIn } = useAuth();
+  const { logIn, googleLogin } = useAuth();
   const navigate = useNavigate();
+
+  const handleGoogleRegister = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   const handlelogIn = (e) => {
     e.preventDefault();
@@ -33,7 +45,7 @@ const Login = () => {
       </Helmet>
       <h1 className="py-8 text-5xl text-green-800 font-bold">Login Here</h1>
       <button
-        // onClick={handleGoogleLogin}
+        onClick={handleGoogleRegister}
         className=" btn btn-info text-white font-bold"
       >
         <p className="p-2 bg-black rounded-full">
