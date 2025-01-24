@@ -1,6 +1,6 @@
 ## Project Name: BiLang
 
-### backend github link: https://github.com/programming-hero-web-course2/b10a11-server-side-Md-Azad
+### backend github link: https://github.com/Md-Azad/bilang-server
 
 ### Live link: https://bilang-57fe9.web.app/
 
