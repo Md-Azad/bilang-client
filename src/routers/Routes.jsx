@@ -12,6 +12,8 @@ import MyBookedTutorials from "../pages/MyBookedTutorials/MyBookedTutorials";
 import UpdateTutorial from "../pages/MyBookedTutorials/UpdateTutorial";
 import Category from "../pages/Category/Category";
 import Error from "../sharedComponents/Error";
+import About from "../components/About";
+import Contact from "../components/Contact";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -78,6 +80,14 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
     ],
   },
