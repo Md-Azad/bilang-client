@@ -9,7 +9,7 @@ const FindTutors = () => {
 
   useState(() => {
     axios
-      .get("https://bilang-server.vercel.app/all-tutorials", {
+      .get("http://localhost:3000/all-tutorials", {
         withCredentials: true,
       })
       .then((response) => {

@@ -9,12 +9,9 @@ const MyTutorials = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `https://bilang-server.vercel.app/my-tutorials?email=${user?.email}`,
-        {
-          withCredentials: true,
-        }
-      )
+      .get(`http://localhost:3000/my-tutorials?email=${user?.email}`, {
+        withCredentials: true,
+      })
       .then((response) => {
         setMyTutorials(response.data);
       });
@@ -22,7 +19,7 @@ const MyTutorials = () => {
 
   const handleTutorialDelete = (id) => {
     axios
-      .delete(`https://bilang-server.vercel.app/all-tutorials/${id}`)
+      .delete(`http://localhost:3000/all-tutorials/${id}`)
       .then((res) => {
         if (res.data.deletedCount > 0) {
           const remainingTutorials = myTutorials.filter(

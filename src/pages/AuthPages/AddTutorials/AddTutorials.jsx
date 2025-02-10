@@ -19,7 +19,7 @@ const AddTutorials = () => {
     const language = selectElement.options[selectElement.selectedIndex].text;
 
     axios
-      .post("https://bilang-server.vercel.app/add-tutorials", {
+      .post("http://localhost:3000/add-tutorials", {
         name,
         email,
         image,

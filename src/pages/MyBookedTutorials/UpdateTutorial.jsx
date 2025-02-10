@@ -12,7 +12,7 @@ const UpdateTutorial = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://bilang-server.vercel.app/tutor/${id?.id}`)
+      .get(`http://localhost:3000/tutor/${id?.id}`)
       .then((res) => {
         setData(res.data);
       })
@@ -30,7 +30,7 @@ const UpdateTutorial = () => {
     const description = form.des.value;
 
     axios
-      .put(`https://bilang-server.vercel.app/update/${id?.id}`, {
+      .put(`http://localhost:3000/update/${id?.id}`, {
         image,
         language,
         price,

@@ -8,7 +8,7 @@ const Category = () => {
   const [tutors, setTutors] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://bilang-server.vercel.app/category/${category.category}`)
+      .get(`http://localhost:3000/category/${category.category}`)
       .then((res) => {
         setTutors(res.data);
       })

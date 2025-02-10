@@ -6,7 +6,7 @@ const LanguageCategory = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     axios
-      .get("https://bilang-server.vercel.app/categories")
+      .get("http://localhost:3000/categories")
       .then((res) => {
         setCategories(res.data);
       })

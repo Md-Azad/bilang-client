@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
       if (currentUser?.email) {
         const user = { email: currentUser.email };
         axios
-          .post(`https://bilang-server.vercel.app/jwt`, user, {
+          .post(`http://localhost:3000/jwt`, user, {
             withCredentials: true,
           })
           .then(() => {
@@ -70,11 +70,7 @@ const AuthProvider = ({ children }) => {
           });
       } else {
         axios
-          .post(
-            "https://bilang-server.vercel.app/logout",
-            {},
-            { withCredentials: true }
-          )
+          .post("http://localhost:3000/logout", {}, { withCredentials: true })
           .then(() => {
             setLoading(false);
           })

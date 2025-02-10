@@ -14,7 +14,7 @@ const TutorDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://bilang-server.vercel.app/tutor/${id}`, {
+      .get(`http://localhost:3000/tutor/${id}`, {
         withCredentials: true,
       })
       .then((response) => {
@@ -26,7 +26,7 @@ const TutorDetails = () => {
   }, [id]);
   const handleAddBooking = () => {
     axios
-      .post("https://bilang-server.vercel.app/booking", {
+      .post("http://localhost:3000/booking", {
         jobId: details._id,
         email: user?.email,
         name: details.name,
