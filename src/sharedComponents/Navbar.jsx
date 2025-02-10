@@ -8,7 +8,6 @@ import { useState } from "react";
 const Navbar = () => {
   const { user, logOut, mode, setMode } = useAuth();
   const [showDropdown, setShowDropdown] = useState(true);
-  console.log(mode);
 
   const navLinks = (
     <>
@@ -16,17 +15,29 @@ const Navbar = () => {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/add-tutorials">Add Tutorials</NavLink>
-      </li>
+      {user?.email && (
+        <li>
+          <NavLink to="/add-tutorials">Add Tutorials</NavLink>
+        </li>
+      )}
       <li>
         <NavLink to="/find-tutors">Find Tutors</NavLink>
       </li>
+      {user?.email && (
+        <li>
+          <NavLink to="/my-tutorials">My Tutorials</NavLink>
+        </li>
+      )}
+      {user?.email && (
+        <li>
+          <NavLink to="/my-booked-tutorials">My Booked Tutorials</NavLink>
+        </li>
+      )}
       <li>
-        <NavLink to="/my-tutorials">My Tutorials</NavLink>
+        <NavLink to="/about">About Us</NavLink>
       </li>
       <li>
-        <NavLink to="/my-booked-tutorials">My Booked Tutorials</NavLink>
+        <NavLink to="/about">Contact</NavLink>
       </li>
     </>
   );
@@ -51,7 +62,7 @@ const Navbar = () => {
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost mr-4  lg:hidden"
+              className="btn btn-ghost   lg:hidden"
               onClick={handleDropdown}
             >
               <svg
@@ -88,7 +99,9 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center  hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-2">{navLinks}</ul>
+          <ul className="menu menu-horizontal px-1 font-bold gap-2">
+            {navLinks}
+          </ul>
         </div>
         <div className="navbar-end gap-4">
           <button onClick={() => setMode((pre) => !pre)}>
@@ -106,7 +119,7 @@ const Navbar = () => {
                 data-tooltip-id="my-tooltip"
                 data-tooltip-content={user?.displayName}
                 src={user?.photoURL ? user?.photoURL : "N/A"}
-                className="w-10 h-10 rounded-full"
+                className="w-10 h-10 rounded-full hidden md:flex"
                 alt=""
               />
 
