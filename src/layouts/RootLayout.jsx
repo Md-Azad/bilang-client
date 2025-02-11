@@ -6,7 +6,7 @@ import Footer from "../sharedComponents/Footer";
 const RootLayout = () => {
   // const { mode } = useAuth();
   return (
-    <div className={``}>
+    <div className="">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>

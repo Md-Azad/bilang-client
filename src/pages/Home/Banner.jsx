@@ -19,7 +19,7 @@ const Banner = () => {
         className="mySwiper h-56 md:h-96 rounded-lg "
       >
         <SwiperSlide>
-          <div className=" flex flex-col justify-center items-center h-full bg-gradient-to-r from-purple-900 to-gray-500 z-20">
+          <div className=" flex flex-col justify-center items-center h-full bg-gradient-to-r from-cyan-900 to-gray-500 z-20">
             <h1 className="text-xl md:text-2xl lg:text-3xl text-white font-bold underline mb-2 md:mb-6">
               Why Should Learn a Foreign Language?
             </h1>
@@ -45,7 +45,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" flex flex-col justify-center items-center h-full bg-gradient-to-r from-violet-500 to-fuchsia-500">
+          <div className=" flex flex-col justify-center items-center h-full bg-gradient-to-r from-cyan-500 to-cyan-900">
             <h1 className="text-xl md:text-2xl lg:text-3xl text-white font-bold underline mb-2 md:mb-6">
               Why We Are Better Than Others?
             </h1>

@@ -35,7 +35,9 @@ const MyTutorials = () => {
 
   return (
     <div>
-      <h1>My tutorials here. {myTutorials.length}</h1>
+      <h1 className="text-center text-2xl text-cyan-600 font-bold my-4">
+        You have Total tutorials:. {myTutorials.length}
+      </h1>
       <div className="overflow-x-auto border-2 border-green-700">
         <table className="table">
           {/* head */}
