@@ -42,29 +42,40 @@ const TutorDetails = () => {
       });
   };
   return (
-    <div className="card lg:card-side bg-gray-100 shadow-xl pl-4 min-h-fit">
-      <figure className="w-1/2   m-2 rounded-lg">
+    <div className="flex flex-row items-center bg-gray-100 h-[70vh] shadow-xl pl-4">
+      <div className=" w-1/2   flex items-center justify-center  ">
+        <div className="h-4/5 w-3/4 space-y-2  ">
+          <h2 className=" font-bold text-xl  text-cyan-600 uppercase">
+            {details?.name}
+          </h2>
+          <p className=" font-semibold text-xl  text-cyan-600">
+            Teaching Language:{details?.language}
+          </p>
+          <p className=" font-semibold text-xl  text-cyan-600">
+            Pay Per Session: ${details?.price}
+          </p>
+          <p className=" font-semibold text-xl  text-cyan-600">
+            Reviews: {details?.review}
+          </p>
+          <p className=" text-cyan-600"> {details?.description}</p>
+
+          <div className=" text-center">
+            <button
+              onClick={handleAddBooking}
+              className="btn bg-cyan-600 w-full text-white hover:bg-cyan-400"
+            >
+              Book this tutor
+            </button>
+          </div>
+        </div>
+      </div>
+      <figure className="w-1/2 h-full p-4 m-2 rounded-lg">
         <img
-          className=" w-full h-full rounded-lg object-cover"
+          className=" w-full h-full rounded-lg object-fit"
           src={details?.image}
           alt="Album"
         />
       </figure>
-
-      <div className="card-body">
-        <h1>h</h1>
-        <h2 className="card-title">{details?.name}</h2>
-        <p>Teaching Language:{details?.language}</p>
-        <p>Pay Per Session: ${details?.price}</p>
-        <p>Description: {details?.description}</p>
-        <p>Review: {details?.review}</p>
-
-        <div className="card-actions justify-end">
-          <button onClick={handleAddBooking} className="btn btn-primary">
-            Book this tutor
-          </button>
-        </div>
-      </div>
     </div>
   );
 };
