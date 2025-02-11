@@ -1,7 +1,7 @@
 import logo from "../assets/logo.webp";
 const Footer = () => {
   return (
-    <div className="my-4 ">
+    <div className="mt-4 ">
       <footer className="footer bg-neutral text-neutral-content p-10">
         <aside>
           <img className="w-20 h-16" src={logo} alt="" />

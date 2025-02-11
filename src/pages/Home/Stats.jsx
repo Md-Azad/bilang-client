@@ -1,7 +1,22 @@
 import { IoIosStar } from "react-icons/io";
 import useAuth from "../../hooks/useAuth";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const Stats = () => {
   const { mode } = useAuth();
+
+  const [stats, setStates] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/stats")
+      .then((res) => {
+        setStates(res.data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
+  console.log(stats.totalReviews);
   return (
     <div
       className={`stats stats-vertical lg:stats-horizontal shadow w-full my-4 shadow-black ${
@@ -14,7 +29,7 @@ const Stats = () => {
       </div>
 
       <div className="stat">
-        <div className="stat-value">30,000+</div>
+        <div className="stat-value">{stats.totalReviews}</div>
         <div className="stat-desc">5-Star tutor reviews</div>
       </div>
       <div className="stat">
