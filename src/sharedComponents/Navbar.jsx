@@ -56,7 +56,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`navbar bg-purple-300 mb-6 md:px-12  sticky top-0 z-50 `}>
+      <div className={`navbar bg-cyan-400 mb-6 md:px-12  sticky top-0 z-50 `}>
         <div className="navbar-start  ">
           <div className="dropdown ">
             <div
@@ -99,7 +99,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center  hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 font-bold gap-2">
+          <ul className="menu menu-horizontal px-1 font-bold  gap-2">
             {navLinks}
           </ul>
         </div>

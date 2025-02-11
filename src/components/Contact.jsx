@@ -55,8 +55,8 @@ const Contact = () => {
   //   }
 
   return (
-    <div className="flex w-11/12 md:10/12 mx-auto flex-col-reverse md:flex-row gap-4 bg-gray-100">
-      <div className="flex-1 flex items-center justify-center border-2 border-red-900">
+    <div className="flex w-11/12 md:10/12 mx-auto flex-col-reverse md:flex-row gap-4 bg-gray-100 p-2">
+      <div className="flex-1 flex items-center justify-center border-2 border-gray-200 rounded-lg">
         <div className="text-center text-xl font-bold">
           <h1 className=" text-2xl underline mt-12">Our Main Office</h1>
           <p>123, bracklyn road, dusseldorf</p>
@@ -65,7 +65,7 @@ const Contact = () => {
           <p>Email: support@bilang.com</p>
         </div>
       </div>
-      <form onSubmit={submit} className="card-body">
+      <form onSubmit={submit} className="card-body border border-gray-200">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Your Email</span>

@@ -20,6 +20,8 @@ const FindTutors = () => {
       });
   }, [tutors]);
 
+  console.log(tutors);
+
   return (
     <div>
       <div className="flex justify-between">

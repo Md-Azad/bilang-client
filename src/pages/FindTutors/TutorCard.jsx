@@ -1,49 +1,36 @@
-import { MdCastForEducation } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { TbLanguage } from "react-icons/tb";
 import { Link } from "react-router-dom";
 const TutorCard = ({ tutor }) => {
   return (
-    <div className="border-4 border-red-800 p-4">
-      <div className="grid grid-cols-3">
-        <img className="w-10/12 h-32 rounded-lg" src={tutor?.image} alt="" />
-        <div className="space-y-4">
-          <h1 className="text-2xl font-bold">{tutor?.name}</h1>
-          <p className="flex items-center gap-2 text-xl font-bold">
-            <MdCastForEducation />
-            {tutor?.language}
-          </p>
-          <p className="font-bold flex gap-2 items-center ">
-            <TbLanguage></TbLanguage>
-            <span>Speaks: {tutor?.language} (Native)</span>
-          </p>
+    <div className="border-4  p-4 bg-gray-100">
+      <div className="flex gap-4 h-full">
+        <div className="w-1/3 h-full ">
+          <img
+            src={tutor?.image}
+            alt=""
+            className="w-full h-full object-cover rounded-lg"
+          />
         </div>
-        <div className="flex justify-evenly  ">
-          <div className="flex flex-col w-1/2">
-            <div className="grid grid-cols-2 items-center ">
-              <h1>
-                <FaStar className="text-red-900 text-4xl" />
-              </h1>
-              <p className="text-4xl  ">{tutor?.review}</p>
-            </div>
-            <p className="ml-2 text-gray-400">{tutor?.review} reviews</p>
-          </div>
-
-          <div className="">
-            <p className=" font-bold">USD: ${tutor?.price} </p>
-            <p className="text-gray-400 text-sm">50 min session</p>
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-between items-center mt-2">
-        <div className="w-1/3 "></div>
-        <div className="flex justify-between items-center">
-          <h1 className=" font-bold">Description: {tutor?.description}</h1>
+        <div className="w-2/3 relative">
+          <h1 className="text-xl font-bold text-cyan-700">{tutor?.name}</h1>
+          <h2 className="flex items-center gap-2 text-cyan-600 font-bold">
+            <TbLanguage /> <span>{tutor?.language}</span>
+          </h2>
+          <p className="text-xl font-bold text-cyan-700">50 minutes sesstion</p>
+          <h2 className="text-xl font-bold text-cyan-700">
+            ${tutor?.price} (USD)
+          </h2>
+          <p className=" font-bold text-cyan-700">{tutor?.description}</p>
           <Link to={`/tutor/${tutor?._id}`}>
-            <button className="btn bg-pink-500 border-2 border-black">
-              Details
+            <button className="btn w-full bg-cyan-600 text-white uppercase  absolute bottom-0 hover:bg-cyan-500">
+              See Details
             </button>
           </Link>
+          <p className="flex absolute top-0 right-2 items-center gap-2">
+            <FaStar className="text-2xl text-orange-400" />{" "}
+            <span className="text-cyan-600">{tutor?.review} reviews</span>
+          </p>
         </div>
       </div>
     </div>
