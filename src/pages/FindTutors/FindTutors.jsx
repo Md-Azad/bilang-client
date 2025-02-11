@@ -36,17 +36,15 @@ const FindTutors = () => {
       });
   }, [tutors]);
 
-  console.log(tutors);
-
   return (
     <div>
-      <div className="flex justify-between">
-        <div className="flex justify-end gap-4 ">
+      <div className="flex justify-between mx-2">
+        <div className="flex justify-end gap-4  ">
           <button onClick={handleMinSort} className="btn btn-info text-white">
-            Sort By Min Price
+            Min Price
           </button>
           <button onClick={handleMaxSort} className="btn btn-accent text-white">
-            Sort By Max Price
+            Max Price
           </button>
         </div>
         <Search setSearch={setSearch}></Search>

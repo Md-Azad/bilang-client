@@ -42,15 +42,17 @@ const TutorDetails = () => {
       });
   };
   return (
-    <div className="card lg:card-side bg-gray-100 shadow-xl pl-4 h-72">
-      <figure className="w-1/2 h-10/12 m-2 rounded-lg">
+    <div className="card lg:card-side bg-gray-100 shadow-xl pl-4 min-h-fit">
+      <figure className="w-1/2   m-2 rounded-lg">
         <img
           className=" w-full h-full rounded-lg object-cover"
           src={details?.image}
           alt="Album"
         />
       </figure>
+
       <div className="card-body">
+        <h1>h</h1>
         <h2 className="card-title">{details?.name}</h2>
         <p>Teaching Language:{details?.language}</p>
         <p>Pay Per Session: ${details?.price}</p>

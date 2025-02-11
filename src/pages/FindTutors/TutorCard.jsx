@@ -3,8 +3,8 @@ import { TbLanguage } from "react-icons/tb";
 import { Link } from "react-router-dom";
 const TutorCard = ({ tutor }) => {
   return (
-    <div className="border-4  p-4 bg-gray-100">
-      <div className="flex gap-4 h-full">
+    <div className="border-4  p-8 md:pt-4 bg-gray-100">
+      <div className=" flex gap-4 h-full">
         <div className="w-1/3 h-full ">
           <img
             src={tutor?.image}
@@ -16,6 +16,7 @@ const TutorCard = ({ tutor }) => {
           <h1 className="text-xl font-bold text-cyan-700">{tutor?.name}</h1>
           <h2 className="flex items-center gap-2 text-cyan-600 font-bold">
             <TbLanguage /> <span>{tutor?.language}</span>
+            <span className="md:hidden">({tutor?.review} reviews)</span>
           </h2>
           <p className="text-xl font-bold text-cyan-700">50 minutes sesstion</p>
           <h2 className="text-xl font-bold text-cyan-700">
@@ -27,7 +28,7 @@ const TutorCard = ({ tutor }) => {
               See Details
             </button>
           </Link>
-          <p className="flex absolute top-0 right-2 items-center gap-2">
+          <p className="md:flex absolute hidden md:top-0 right-2 items-center gap-2">
             <FaStar className="text-2xl text-orange-400" />{" "}
             <span className="text-cyan-600">{tutor?.review} reviews</span>
           </p>
