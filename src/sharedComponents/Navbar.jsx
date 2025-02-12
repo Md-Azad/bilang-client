@@ -8,6 +8,7 @@ import { useState } from "react";
 const Navbar = () => {
   const { user, logOut, mode, setMode } = useAuth();
   const [showDropdown, setShowDropdown] = useState(true);
+  console.log(mode);
 
   const navLinks = (
     <>
@@ -56,7 +57,11 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`navbar bg-cyan-400 mb-6 md:px-12  sticky top-0 z-50 `}>
+      <div
+        className={`navbar ${
+          mode ? "bg-gray-600 text-cyan-500" : "bg-cyan-400"
+        }  mb-6 md:px-12  sticky top-0 z-50 `}
+      >
         <div className="navbar-start  ">
           <div className="dropdown ">
             <div

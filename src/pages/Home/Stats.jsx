@@ -20,21 +20,29 @@ const Stats = () => {
   return (
     <div
       className={`stats stats-vertical lg:stats-horizontal shadow w-full my-4 shadow-black ${
-        mode ? "bg-gray-200" : ""
+        mode ? "bg-gray-600 text-white" : ""
       } `}
     >
-      <div className="stat">
-        <div className="stat-value">{stats?.totalTutors}</div>
-        <div className="stat-desc">Experience tutors</div>
+      <div className={`${mode && "text-white"} stat`}>
+        <div className={`stat-value ${mode && "text-white"}`}>
+          {stats?.totalTutors}
+        </div>
+        <div className={`stat-desc ${mode && "text-white"}`}>
+          Experience tutors
+        </div>
       </div>
 
       <div className="stat">
         <div className="stat-value">{stats?.totalReviews}</div>
-        <div className="stat-desc">5-Star tutor reviews</div>
+        <div className={`stat-desc ${mode && "text-white"}`}>
+          5-Star tutor reviews
+        </div>
       </div>
       <div className="stat">
         <div className="stat-value">{stats?.totalLanguages}</div>
-        <div className="stat-desc">Subjects taught</div>
+        <div className={`stat-desc ${mode && "text-white"}`}>
+          Subjects taught
+        </div>
       </div>
 
       <div className="stat">
@@ -45,7 +53,9 @@ const Stats = () => {
           <IoIosStar />
           <IoIosStar />
         </div>
-        <div className="stat-desc text-center">on the App Store</div>
+        <div className={`stat-desc ${mode && "text-white"}`}>
+          on the App Store
+        </div>
       </div>
     </div>
   );
