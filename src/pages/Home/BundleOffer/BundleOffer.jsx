@@ -18,8 +18,8 @@ const BundleOffer = () => {
         </div>
 
         <p className="text-center mt-4 text-red-700">
-          T&C: With this offer you can enjoy at most 3 language at a time. After
-          completing preveously taken courses you can choose new courses.
+          T&C: With this offer you can enjoy at most 3 languages at a time.
+          After completing preveously taken courses you can choose new courses.
           Choosing courses have no limit.
         </p>
       </div>
