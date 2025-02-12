@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import BundleOffer from "./BundleOffer/BundleOffer";
 import Group from "./Group";
 import Guarantee from "./Guarantee";
 import LanguageCategory from "./LanguageCategory";
@@ -10,8 +11,10 @@ const Home = () => {
       <Banner></Banner>
       <Stats></Stats>
       <LanguageCategory></LanguageCategory>
-      <Group></Group>
       <Guarantee></Guarantee>
+      <Group></Group>
+
+      <BundleOffer />
     </div>
   );
 };
