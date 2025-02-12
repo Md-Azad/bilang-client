@@ -1,8 +1,14 @@
 import logo from "../assets/logo.webp";
+import useAuth from "../hooks/useAuth";
 const Footer = () => {
+  const { mode } = useAuth();
   return (
     <div className="mt-4 ">
-      <footer className="footer bg-neutral text-neutral-content p-10">
+      <footer
+        className={`footer ${
+          mode ? "bg-neutral" : "bg-cyan-600"
+        } text-neutral-content p-10`}
+      >
         <aside>
           <img className="w-20 h-16" src={logo} alt="" />
           <p>
