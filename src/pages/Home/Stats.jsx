@@ -8,7 +8,7 @@ const Stats = () => {
   const [stats, setStates] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/stats")
+      .get("https://bilang-server.vercel.app/stats")
       .then((res) => {
         setStates(res.data);
       })
@@ -16,7 +16,7 @@ const Stats = () => {
         console.log(err.message);
       });
   }, []);
-  console.log(stats.totalReviews);
+  console.log(stats.totalTutors);
   return (
     <div
       className={`stats stats-vertical lg:stats-horizontal shadow w-full my-4 shadow-black ${
@@ -24,23 +24,19 @@ const Stats = () => {
       } `}
     >
       <div className="stat">
-        <div className="stat-value">32,000+</div>
+        <div className="stat-value">{stats?.totalTutors}</div>
         <div className="stat-desc">Experience tutors</div>
       </div>
 
       <div className="stat">
-        <div className="stat-value">{stats.totalReviews}</div>
+        <div className="stat-value">{stats?.totalReviews}</div>
         <div className="stat-desc">5-Star tutor reviews</div>
       </div>
       <div className="stat">
-        <div className="stat-value">120</div>
+        <div className="stat-value">{stats?.totalLanguages}</div>
         <div className="stat-desc">Subjects taught</div>
       </div>
 
-      <div className="stat">
-        <div className="stat-value">180+</div>
-        <div className="stat-desc">Tutor Nationalities</div>
-      </div>
       <div className="stat">
         <div className="stat-value flex items-center">
           4.8 <IoIosStar />

@@ -9,7 +9,7 @@ const MyBookedTutorials = () => {
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/booking/${user.email}`, {
+      .get(`https://bilang-server.vercel.app/booking/${user.email}`, {
         withCredentials: true,
       })
       .then((res) => {

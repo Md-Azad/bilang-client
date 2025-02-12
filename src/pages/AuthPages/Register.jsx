@@ -63,9 +63,9 @@ const Register = () => {
       });
   };
   return (
-    <div className="hero-content flex-col bg-gray-200 my-8 rounded-lg">
+    <div className="hero-content flex-col bg-gray-200 mb-8  mt-2 rounded-lg mx-auto">
       <div className="flex flex-col justify-center items-center ">
-        <h1 className="text-5xl font-bold italic">Register now!</h1>
+        <h1 className="text-3xl font-bold italic">Register now!</h1>
         <p>With</p>
         <button
           onClick={handleGoogleRegister}
